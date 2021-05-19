@@ -1,14 +1,16 @@
+$nav:       #312450;
+$primary:   #5E42A6;
+$secondary: #5052B5;
+$tertiary:  #B74E91;
+
 $palette: (
-	bg:				    #312450,
-	bg-dark:			darken(#312450, 5),
-	fg:					  rgba(255,255,255,0.55),
-	border:				rgba(255,255,255,0.15),
-	accent1:			#5e42a6,
-	accent1-alt:	darken(#5e42a6, 10),
-	accent2:			#5052b5,
-	accent2-alt:	darken(#5052b5, 10),
-	accent3:			#b74e91,
-	accent3-alt:	darken(#b74e91, 10)
+  nav:            $nav,
+  primary:        $primary,
+  primary-dark:   darken($primary, 10),
+  secondary:      $secondary,
+  secondary-dark: darken($secondary, 10),
+  tertiary:       $tertiary,
+  tertiary-dark:  darken($tertiary, 10),
 );
 
 @function color($color) {

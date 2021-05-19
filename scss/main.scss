@@ -8,15 +8,188 @@ $widthXSmall:   480px;
 $widthXXSmall:  360px;
 
 html {
-  scroll-behavior: smooth;
+  font-size: 1.25em;
 }
 
 body {
   margin: 0;
-  font-size: 16px;
+  padding: 0;
+}
+
+.wrapper {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  iframe {
+    border: none;
+  }
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  min-height: 100px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+}
+
+.double-column {
+  display: flex;
+  flex-direction: column;
+}
+
+#navigation {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: color(nav);
+
+  nav {
+    ul {
+      list-style: none;
+      padding: 0;
+      li {
+        display: inline;
+        margin: 1rem;
+        padding: 0;
+
+        &.active {
+          a {
+            filter: opacity(80%);
+          }
+        }
+
+        a {
+          display: inline;
+          font-size: 0.8rem;
+          font-weight: bold;
+          text-decoration: none;
+          text-transform: uppercase;
+          color: white;
+          filter: opacity(55%);
+
+          &:hover {
+            filter: opacity(90%);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $widthSmall) {
+  .column {
+    flex: 1;
+  }
+
+  .double-column {
+    flex: 2;
+  }
+
+  #navigation {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 3rem;
+    justify-content: center;
+  }
+
+  .content-wrapper {
+    margin-top: 3rem;
+  }
+}
+
+@media screen and (min-width: $widthLarge) {
+  #navigation {
+    flex-direction: column;
+    width: 18rem;
+    height: 100vh;
+    align-items: flex-end;
+
+    .inner {
+      margin-right: 2rem;
+
+      nav {
+        ul {
+          text-align: right;
+
+          li {
+            display: flex;
+          }
+        }
+      }
+    }
+  }
+
+  .content-wrapper {
+    width: calc(100%-18rem);
+    margin-top: 0;
+    margin-left: 18rem;
+  }
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
 }
 
 #hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: color(primary);
+  color: white;
+  background-attachment: fixed;
+  background-image: url("../img/circles.svg");
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+  .inner {
+    margin: 5rem;
+
+    h1 {
+      font-size: 2.5rem;
+    }
+    h3 {
+      font-size: 1.25rem;
+    }
+  }
+}
+
+#projects {
+  min-height: 100vh;
+  background-color: color(secondary);
+  display: flex;
+  flex-direction: column;
+
+  .project-image {
+    display: flex;
+    width: 100%;
+    min-width: 300px;
+    img {
+      width: 100%;
+      min-width: 300px;
+    }
+  }
+}
+
+#contact {
+  min-height: 100vh;
+  background-color: color(tertiary);
+}
+
+/*#hero {
   min-height: 100vh;
   background: color(accent1);
   background-attachment: fixed;
@@ -85,10 +258,10 @@ body {
         list-style-type: none;
         padding: 0;
         position: relative;
-      }
 
-      li:first-child {
-        margin: 0;
+        &:first-child {
+          margin: 0;
+        }
       }
     }
 
@@ -104,21 +277,19 @@ body {
       position: relative;
       text-decoration: none;
       text-transform: uppercase;
+
+      &:link, &:visited {
+        color: gray;
+      }
+      &:hover {
+        color: white;
+      }
+      &:active {
+        color: color(accent1);
+      }
     }
   }
 
-  a:link {
-    color: gray;
-  }
-  a:visited {
-    color: gray;
-  }
-  a:hover {
-    color: white;
-  }
-  a:active {
-    color: color(accent1);
-  }
 }
 
 .content-wrapper {
@@ -150,6 +321,33 @@ body {
 @media screen and (min-width: $widthSmall) and (max-width: $widthLarge) {
   .content-wrapper {
     margin-top: 50px;
+  }
+
+  #navigation {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-height: 50px;
+
+    ul {
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      max-height: 50px;
+      font-family: arial;
+      font-size: 1.25em;
+      display: inline-flex;
+      margin: 0;
+
+      a {
+        padding: 0;
+        margin: 1em;
+      }
+    }
   }
 }
 
@@ -215,3 +413,5 @@ body {
     }
   }
 }
+
+*/
