@@ -40,13 +40,21 @@ function setActiveNavOnScrollPosition () {
   let sections = Array.from(document.getElementsByClassName('content-section'));
   if (naviItems.length !== sections.length) return;
 
-  let rectYVals = new Array(sections.length);
+  let rectVisAmt = new Array(sections.length);
   for (let i in sections) {
-    rectYVals[i] = Math.abs(sections[i].getBoundingClientRect().y);
+    let rect = sections[i].getBoundingClientRect();
+    if (rect.bottom < 0) {
+      rectVisAmt[i] = 0;
+    } else if (rect.top < 0) {
+      rectVisAmt[i] = rect.bottom;
+    } else {
+      rectVisAmt[i] = window.innerHeight - rect.top;
+      if (rectVisAmt[i] < 0) { rectVisAmt[i] = 0; }
+    }
   }
-  let minVal = Math.min(...rectYVals);
-  for (let i in rectYVals) {
-    if (minVal === rectYVals[i]) {
+  let max = Math.max(...rectVisAmt);
+  for (let i in rectVisAmt) {
+    if (max === rectVisAmt[i]) {
       naviItems[i].classList.add('active');
     } else {
       naviItems[i].classList.remove('active');

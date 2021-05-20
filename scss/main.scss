@@ -28,31 +28,13 @@ body {
   }
 }
 
-.row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 100%;
-  min-height: 100px;
-}
-
-.column {
-  display: flex;
-  flex-direction: column;
-  flex-basis: 100%;
-}
-
-.double-column {
-  display: flex;
-  flex-direction: column;
-}
-
 #navigation {
   display: none;
   position: fixed;
   top: 0;
   left: 0;
   background-color: color(nav);
+  justify-content: center;
 
   nav {
     ul {
@@ -88,25 +70,139 @@ body {
   }
 }
 
-@media screen and (min-width: $widthSmall) {
-  .column {
-    flex: 1;
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+#hero {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  background-color: color(primary);
+  color: white;
+  background-attachment: fixed;
+  background-image: url("../img/circles.svg");
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+  .inner {
+    margin: 1.25rem;
+
+    h1 {
+      font-size: 1.8rem;
+    }
+    h3 {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+#projects {
+  display: grid;
+  grid-template-columns: auto;
+  background-color: color(secondary);
+
+  div { display: flex; }
+
+  .project-image {
+    width: 100%;
+    min-width: 300px;
+
+    img {
+      width: 100%;
+    }
   }
 
-  .double-column {
-    flex: 2;
+  .project-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem 2rem;
+
+    h2 {
+      color: #FFFFFFd0;
+      margin: 0.2rem;
+      font-size: 1.2rem;
+    }
+    p {
+      color: #FFFFFF90;
+      margin: 0.2rem;
+      font-size: 0.8rem;
+    }
+    a {
+      margin-top: 1rem;
+    }
+  }
+}
+
+#contact {
+  min-height: 100vh;
+  background-color: color(tertiary);
+}
+
+#blog {
+  min-height: 100vh;
+}
+
+.button {
+  width: 8rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  background-color: transparent;
+  border: 1px solid #FFFFFF2F;
+  border-radius: 3rem;
+  color: white;
+  cursor: pointer;
+  font-size: 0.6rem;
+  font-weight: bold;
+  letter-spacing: 0.25rem;
+  outline: 0;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+@media screen and (min-width: $widthXXSmall) {
+  #hero {
+    .inner {
+      margin: 2rem;
+    }
+  }
+}
+
+@media screen and (min-width: $widthSmall) {
+  #projects {
+    grid-template-columns: 1fr 2fr;
+
+    div:nth-of-type(4n) {
+      background-color: darken(color(secondary), 5);
+    }
   }
 
   #navigation {
     display: flex;
-    flex-direction: row;
     width: 100%;
     height: 3rem;
-    justify-content: center;
   }
 
   .content-wrapper {
     margin-top: 3rem;
+  }
+
+  #hero {
+    .inner {
+      margin: 5rem;
+
+      h1 {
+        font-size: 2rem;
+      }
+      h3 {
+        font-size: 1rem;
+      }
+    }
   }
 }
 
@@ -119,16 +215,40 @@ body {
 
     .inner {
       margin-right: 2rem;
+      width: calc(100% - 2rem);
 
       nav {
         ul {
           text-align: right;
 
           li {
-            display: flex;
+            display: block;
 
             a {
-              font-size: 1rem;
+              display: block;
+              padding: 0.5rem;
+
+              &:after {
+                background-image: linear-gradient(to right, color(primary), color(tertiary));
+                transition: width 0.75s ease;
+                width: 0;
+              }
+              &:before {
+                background: color(primary-dark);
+                width: 90%;
+              }
+              &:after, &:before {
+                bottom: 0;
+                content: '';
+                height: 0.2rem;
+                position: absolute;
+                right: 0;
+              }
+            }
+            &.active {
+              a:after {
+                width: 90%;
+              }
             }
           }
         }
@@ -143,97 +263,30 @@ body {
   }
 }
 
-.content-wrapper {
-  display: flex;
-  flex-direction: column;
-}
-
-#hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  background-color: color(primary);
-  color: white;
-  background-attachment: fixed;
-  background-image: url("../img/circles.svg");
-  background-position: top right;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-
-  .inner {
-    margin: 5rem;
-
-    h1 {
-      font-size: 2.5rem;
-    }
-    h3 {
-      font-size: 1.25rem;
-    }
-  }
-}
-
-#projects {
-  min-height: 100vh;
-  background-color: color(secondary);
-  display: flex;
-  flex-direction: column;
-
-  .project-image {
-    display: flex;
-    width: 100%;
-    min-width: 300px;
-    img {
-      width: 100%;
-      min-width: 300px;
-    }
-  }
-}
-
-#contact {
-  min-height: 100vh;
-  background-color: color(tertiary);
-}
-
-#blog {
-  min-height: 100vh;
-}
-
-/*
+@media screen and (min-width: $widthXLarge) {
   #navigation {
-    > .inner {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 0 2.5em 0 2.5em;
-      width: calc(100% - 5em);
-      min-height: 100%;
-    }
+    width: 20rem;
+  }
 
-    nav a {
-      transition: color 0.2s ease;
-    }
+  #navigation nav ul li a {
+    font-size: 1rem;
+  }
 
-    nav a:after {
-      background-image: linear-gradient(to right, #5e42a6, #b74e91);
-      transition: max-width 0.2s ease;
-    }
-    nav a:before {
-      background: #3c2c62;
-    }
-    nav a:before, nav a:after {
-			border-radius: 0.2em;
-			bottom: 0;
-			content: '';
-			height: 0.2em;
-			position: absolute;
-			right: 0;
-			width: 100%;
-    }
+  .content-wrapper {
+    width: calc(100%-20rem);
+    margin-left: 20rem;
+  }
 
-    nav a.active:after {
-      max-width: 100%;
+  #hero {
+    .inner {
+      h1 {
+        font-size: 2.5rem;
+      }
+      h3 {
+        font-size: 1.25rem;
+      }
     }
   }
 }
 
-*/
+/* TODO set #hero h1 and h3 font size in width-large to current default, and lower the default */
