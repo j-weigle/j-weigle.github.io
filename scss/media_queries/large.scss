@@ -1,0 +1,59 @@
+@import "screen_sizes";
+@import "../colors";
+
+@media screen and (min-width: $widthLarge) {
+  #navigation {
+    flex-direction: column;
+    width: 18rem;
+    height: 100vh;
+    align-items: flex-end;
+
+    .inner {
+      margin-right: 2rem;
+      width: calc(100% - 2rem);
+
+      nav {
+        ul {
+          text-align: right;
+
+          li {
+            display: block;
+
+            a {
+              display: block;
+              padding: 0.5rem;
+
+              &:after {
+                background-image: linear-gradient(to right, color(primary), color(tertiary));
+                transition: width 0.5s ease;
+                width: 0;
+              }
+              &:before {
+                background: color(primary-dark);
+                width: 90%;
+              }
+              &:after, &:before {
+                bottom: 0;
+                content: '';
+                height: 0.2rem;
+                position: absolute;
+                right: 0;
+              }
+            }
+            &.active {
+              a:after {
+                width: 90%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .content-wrapper {
+    width: calc(100%-18rem);
+    margin-top: 0;
+    margin-left: 18rem;
+  }
+}

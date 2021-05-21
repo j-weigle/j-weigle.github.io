@@ -1,11 +1,5 @@
 @import "colors";
-
-$widthXLarge:   1680px;
-$widthLarge:    1280px;
-$widthMedium:   980px;
-$widthSmall:    736px;
-$widthXSmall:   480px;
-$widthXXSmall:  360px;
+@import "mixins";
 
 html {
   font-size: 1.25em;
@@ -76,8 +70,7 @@ body {
 }
 
 #hero {
-  display: flex;
-  align-items: center;
+  @include flex-v-centered(false);
   min-height: 100vh;
   background-color: color(primary);
   color: white;
@@ -104,30 +97,31 @@ body {
   grid-template-columns: auto;
   background-color: color(secondary);
 
-  div { display: flex; }
-
   .project-image {
+    position: relative;
     width: 100%;
     min-width: 300px;
+    padding-top: 100%;
 
-    img {
+    > * {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
     }
   }
 
   .project-description {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    @include flex-v-centered(true);
     padding: 1rem 2rem;
 
     h2 {
-      color: #FFFFFFd0;
+      color: #FFFFFFe0;
       margin: 0.2rem;
       font-size: 1.2rem;
     }
     p {
-      color: #FFFFFF90;
+      color: #FFFFFFa0;
       margin: 0.2rem;
       font-size: 0.8rem;
     }
@@ -165,128 +159,7 @@ body {
   white-space: nowrap;
 }
 
-@media screen and (min-width: $widthXXSmall) {
-  #hero {
-    .inner {
-      margin: 2rem;
-    }
-  }
-}
-
-@media screen and (min-width: $widthSmall) {
-  #projects {
-    grid-template-columns: 1fr 2fr;
-
-    div:nth-of-type(4n) {
-      background-color: darken(color(secondary), 5);
-    }
-  }
-
-  #navigation {
-    display: flex;
-    width: 100%;
-    height: 3rem;
-  }
-
-  .content-wrapper {
-    margin-top: 3rem;
-  }
-
-  #hero {
-    .inner {
-      margin: 5rem;
-
-      h1 {
-        font-size: 2rem;
-      }
-      h3 {
-        font-size: 1rem;
-      }
-    }
-  }
-}
-
-@media screen and (min-width: $widthLarge) {
-  #navigation {
-    flex-direction: column;
-    width: 18rem;
-    height: 100vh;
-    align-items: flex-end;
-
-    .inner {
-      margin-right: 2rem;
-      width: calc(100% - 2rem);
-
-      nav {
-        ul {
-          text-align: right;
-
-          li {
-            display: block;
-
-            a {
-              display: block;
-              padding: 0.5rem;
-
-              &:after {
-                background-image: linear-gradient(to right, color(primary), color(tertiary));
-                transition: width 0.75s ease;
-                width: 0;
-              }
-              &:before {
-                background: color(primary-dark);
-                width: 90%;
-              }
-              &:after, &:before {
-                bottom: 0;
-                content: '';
-                height: 0.2rem;
-                position: absolute;
-                right: 0;
-              }
-            }
-            &.active {
-              a:after {
-                width: 90%;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-
-  .content-wrapper {
-    width: calc(100%-18rem);
-    margin-top: 0;
-    margin-left: 18rem;
-  }
-}
-
-@media screen and (min-width: $widthXLarge) {
-  #navigation {
-    width: 20rem;
-  }
-
-  #navigation nav ul li a {
-    font-size: 1rem;
-  }
-
-  .content-wrapper {
-    width: calc(100%-20rem);
-    margin-left: 20rem;
-  }
-
-  #hero {
-    .inner {
-      h1 {
-        font-size: 2.5rem;
-      }
-      h3 {
-        font-size: 1.25rem;
-      }
-    }
-  }
-}
-
-/* TODO set #hero h1 and h3 font size in width-large to current default, and lower the default */
+@import "media_queries/xxsmall";
+@import "media_queries/small";
+@import "media_queries/large";
+@import "media_queries/xlarge";

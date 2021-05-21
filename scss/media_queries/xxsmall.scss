@@ -1,0 +1,9 @@
+@import "screen_sizes";
+
+@media screen and (min-width: $widthXXSmall) {
+  #hero {
+    .inner {
+      margin: 2rem;
+    }
+  }
+}

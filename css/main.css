@@ -83,14 +83,16 @@ body {
   grid-template-columns: auto;
   background-color: #5052B5;
 }
-#projects div {
-  display: flex;
-}
 #projects .project-image {
+  position: relative;
   width: 100%;
   min-width: 300px;
+  padding-top: 100%;
 }
-#projects .project-image img {
+#projects .project-image > * {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
 }
 #projects .project-description {
@@ -100,12 +102,12 @@ body {
   padding: 1rem 2rem;
 }
 #projects .project-description h2 {
-  color: #FFFFFFd0;
+  color: #FFFFFFe0;
   margin: 0.2rem;
   font-size: 1.2rem;
 }
 #projects .project-description p {
-  color: #FFFFFF90;
+  color: #FFFFFFa0;
   margin: 0.2rem;
   font-size: 0.8rem;
 }
@@ -197,7 +199,7 @@ body {
   }
   #navigation .inner nav ul li a:after {
     background-image: linear-gradient(to right, #5E42A6, #B74E91);
-    transition: width 0.75s ease;
+    transition: width 0.5s ease;
     width: 0;
   }
   #navigation .inner nav ul li a:before {
@@ -242,6 +244,5 @@ body {
     font-size: 1.25rem;
   }
 }
-/* TODO set #hero h1 and h3 font size in width-large to current default, and lower the default */
 
 /*# sourceMappingURL=main.css.map */
