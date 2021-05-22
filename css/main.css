@@ -87,14 +87,11 @@ body {
 #projects .project-image {
   position: relative;
   width: 100%;
-  min-width: 300px;
-  padding-top: 100%;
+  min-width: 15rem;
 }
 #projects .project-image > * {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
+  height: 100%;
 }
 #projects .project-description {
   display: flex;
