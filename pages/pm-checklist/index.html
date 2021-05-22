@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Details - PM Checklist</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../css/page.css" />
+		<!--noscript><link rel="stylesheet" href="css/noscript.css" /></noscript>-->
+	</head>
+
+	<body>
+		<div class="wrapper">
+
+      <!-- Navigation -->
+      <section id="navigation">
+        <nav>
+          <a href="https://j-weigle.github.io" class="button">Go to Main Site</a>
+        </nav>
+      </section>
+
+      <!-- Content -->
+			<div class="content-wrapper">
+
+        <section id="heading" class="content-section">
+          <div class="inner">
+            <h1>PM&nbsp;Checklist</h1>
+          </div>
+        </section>
+
+        <section id="visual-wrapper">
+          <div class="side-by-side-3">
+            <img src="img/checklist.gif"/>
+            <img src="img/info-fields.gif"/>
+            <img src="img/file-explorer.gif"/>
+          </div>
+          <img src="img/pdf.png"/>
+        </section>
+
+        <section id="description">
+          <p>
+            PM Checklist Generator is an Android application developed in Java. The goal of this project was to allow forklift
+            companies that still use paper preventative maintenance checklists to easily change to an all digital solution.
+          </p>
+          <p>
+            There are 4 activities to the app: Main, Checklist, Info Fields, and File Browser. The main activity is where the
+            user can choose to start an electric or combustion checklist, or browse previously generated files. The checklist
+            activity is a set of radio buttons that have to all be checked before going to the info fields. The info fields
+            then allows input of customer, employee, and truck specific information.
+          </p>
+          <p>
+            The pdf output is done using the native Android PrintedPdfDocument API. Storage is kept local to the application, so
+            it was necessary to write a file browser. Attempting to open the initial containing folder involves sending its URI to
+            an external application, and that isn't allowed for security reasons. It could have been bypassed by using FileProvider
+            in order to convert to a content:// URI instead of a file:// URI, but results were inconsistent across devices/android
+            versions.
+          </p>
+          <a href="https://github.com/j-weigle/PMChecklist" class="button">See the source</a>
+        </section>
+
+			</div>
+		</div>
+	</body>
+</html>

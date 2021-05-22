@@ -24,6 +24,7 @@ body {
   left: 0;
   background-color: #312450;
   justify-content: center;
+  z-index: 100;
 }
 #navigation nav ul {
   list-style: none;

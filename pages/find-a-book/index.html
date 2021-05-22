@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Details - Find A Book</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../css/page.css" />
+		<!--noscript><link rel="stylesheet" href="css/noscript.css" /></noscript>-->
+	</head>
+
+	<body>
+		<div class="wrapper">
+
+      <!-- Navigation -->
+      <section id="navigation">
+        <nav>
+          <a href="https://j-weigle.github.io" class="button">Go to Main Site</a>
+        </nav>
+      </section>
+
+      <!-- Content -->
+			<div class="content-wrapper">
+
+        <section id="heading" class="content-section">
+          <div class="inner">
+            <h1>Find&nbsp;A&nbsp;Book</h1>
+          </div>
+        </section>
+
+        <section id="visual-wrapper">
+          <iframe src="https://j-weigle.github.io/projects/find-a-book" width="100%" height="100%"></iframe>
+        </section>
+
+        <section id="description">
+          <p style="font-size: 0.7rem; color: #FFFFFF80;">
+            Note: the above is a frame containing the application in it. It can be used here, or be accessed directly over in
+            <a href="https://j-weigle.github.io/projects/find-a-book">its own page</a>.
+          </p>
+          <p>
+            Find A Book is a web application written in React.js and uses the Google Books API.
+            The project was initialized using create-react-app. Results are retrieved using the javascript fetch method.
+            CSS was generated using SCSS via dart-sass.
+          </p>
+          <p>
+            Special features include a loading animation and custom pagination.
+          </p>
+          <p>
+            One of the interesting parts about building this project was the totalItems JSON field returned by the Books API.
+            Initially it was assumed to be accurate. But the higher the startIndex that was sent to the API, the lower the totalItems
+            value grew. Therefore, while the custom pagination originally created a link to the final page, the finalized version does
+            not assume that there are any pages beyond the first.
+          </p>
+          <a href="https://github.com/j-weigle/find-a-book" class="button">See the source</a>
+        </section>
+
+			</div>
+		</div>
+	</body>
+</html>
