@@ -37,12 +37,19 @@
           <div class="inner">
             <h1>Justin&nbsp;Weigle</h1>
             <h3>Computer&nbsp;Scientist, Software&nbsp;Developer</h3>
-            <p>
-            </p>
+            <p></p>
           </div>
         </div>
 
 				<div id="projects" class="content-section">
+          <div class="project-image">
+            <img src="img/fibonacci-sphere.png"/>
+          </div>
+          <div class="project-description">
+            <h2>Fibonacci Sphere</h2>
+            <p>A WebGL application written using Three.js and bundled using Webpack. It shows a Fibonacci Sphere and how it is constructed</p>
+            <a href="./projects/fibonacci-sphere" class="button">SEE MORE</a>
+          </div>
           <div class="project-image">
             <img src="img/find-a-book.png"/>
           </div>
@@ -59,23 +66,30 @@
             <p>An Android application written in Java that outputs pdf documents of forklift preventative maintenance checklists</p>
             <a href="./pages/pm-checklist" class="button">SEE MORE</a>
           </div>
-          <div class="project-image">
-            <img src="img/pic03.jpg"/>
-          </div>
-          <div class="project-description">
-            <h2>Project Name</h2>
-            <p>Description</p>
-            <a href="https://j-weigle.github.io" class="button">SEE MORE</a>
-          </div>
 				</div>
 
 				<div id="contact" class="content-section">
-          Contact
+          <div class="inner">
+            <h3>Contact Me:</h3>
+            <div class="entry">
+              <img src="img/mail.ico" alt="email icon"><a id="myem"></a>
+            </div>
+            <div class="entry">
+              <img src="img/github.ico" alt="github icon"><a href="https://github.com/j-weigle">github.com/j-weigle</a>
+            </div>
+          </div>
 				</div>
 
 			</div>
 		</div>
 
 		<script src="js/main.js"></script>
+    <script language="JavaScript">
+      const elem = document.querySelector('#myem');
+      const user = 'justin.weigle2';
+      const site = 'gmail.com';
+      elem.setAttribute('href', '\mailto:' + user + '@' + site);
+      elem.innerText  = user + '@' + site;
+    </script>
 	</body>
 </html>

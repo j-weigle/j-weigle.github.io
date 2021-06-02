@@ -1,0 +1,12 @@
+@import "screen_sizes";
+
+@media screen and (min-width: $widthMedium) {
+  #projects .project-description {
+    h2 {
+      font-size: 1.5rem;
+    }
+    p {
+      font-size: 1rem;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+@import "screen_sizes";
+
+@media screen and (min-width: $widthXSmall) {
+  #contact .inner .entry {
+    padding: 0 1rem;
+
+    a {
+      padding: 1rem;
+    }
+  }
+}

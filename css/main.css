@@ -17,6 +17,11 @@ body {
   border: none;
 }
 
+.codedirection {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+
 #navigation {
   display: none;
   position: fixed;
@@ -87,7 +92,6 @@ body {
 #projects .project-image {
   position: relative;
   width: 100%;
-  min-width: 15rem;
 }
 #projects .project-image > * {
   width: 100%;
@@ -116,6 +120,30 @@ body {
 #contact {
   min-height: 100vh;
   background-color: #B74E91;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+}
+#contact .inner {
+  margin: 1rem;
+}
+#contact .inner .entry {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  margin-bottom: 0.25rem;
+  border-radius: 0.25rem;
+  border: 1px solid #FFFFFF50;
+}
+#contact .inner .entry img {
+  width: 32px;
+}
+#contact .inner .entry a {
+  padding: 0.25rem;
+  font-size: 0.8rem;
+  text-decoration: none;
+  color: white;
 }
 
 #blog {
@@ -145,15 +173,24 @@ body {
   #hero .inner {
     margin: 2rem;
   }
-}
-@media screen and (min-width: 736px) {
-  #projects {
-    grid-template-columns: 1fr 2fr;
-  }
-  #projects div:nth-of-type(4n) {
-    background-color: #4648a6;
+
+  #projects .project-image {
+    min-width: 15rem;
   }
 
+  #contact .inner .entry a {
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 480px) {
+  #contact .inner .entry {
+    padding: 0 1rem;
+  }
+  #contact .inner .entry a {
+    padding: 1rem;
+  }
+}
+@media screen and (min-width: 736px) {
   #navigation {
     display: flex;
     width: 100%;
@@ -171,6 +208,31 @@ body {
     font-size: 2rem;
   }
   #hero .inner h3 {
+    font-size: 1rem;
+  }
+
+  #projects {
+    grid-template-columns: 1fr 2fr;
+  }
+  #projects div:nth-of-type(4n) {
+    background-color: #4648a6;
+  }
+
+  #contact .inner {
+    margin: 5rem;
+  }
+  #contact .inner h3 {
+    font-size: 1.5rem;
+  }
+  #contact .inner .entry {
+    padding: 1rem;
+  }
+}
+@media screen and (min-width: 980px) {
+  #projects .project-description h2 {
+    font-size: 1.5rem;
+  }
+  #projects .project-description p {
     font-size: 1rem;
   }
 }
@@ -240,6 +302,22 @@ body {
   }
   #hero .inner h3 {
     font-size: 1.25rem;
+  }
+}
+@media screen and (min-width: 2000px) {
+  #projects .project-description h2 {
+    font-size: 2rem;
+  }
+  #projects .project-description p {
+    font-size: 1.5rem;
+  }
+
+  .button {
+    width: 12rem;
+    height: 4rem;
+    line-height: 4rem;
+    font-size: 1rem;
+    letter-spacing: 0.4rem;
   }
 }
 

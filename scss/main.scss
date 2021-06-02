@@ -20,6 +20,12 @@ body {
   iframe {
     border: none;
   }
+
+}
+
+.codedirection {
+  unicode-bidi: bidi-override;
+  direction: rtl;
 }
 
 #navigation {
@@ -101,7 +107,6 @@ body {
   .project-image {
     position: relative;
     width: 100%;
-    min-width: 15rem;
 
     > * {
       width: 100%;
@@ -132,6 +137,31 @@ body {
 #contact {
   min-height: 100vh;
   background-color: color(tertiary);
+  @include flex-v-centered(true);
+  color: white;
+
+  .inner {
+    margin: 1rem;
+
+    .entry {
+      @include flex-v-centered(false);
+      padding: 0.5rem;
+      margin-bottom: 0.25rem;
+      border-radius: 0.25rem;
+      border: 1px solid #FFFFFF50;
+
+      img {
+        width: 32px;
+      }
+
+      a {
+        padding: 0.25rem;
+        font-size: 0.8rem;
+        text-decoration: none;
+        color: white;
+      }
+    }
+  }
 }
 
 #blog {
@@ -158,6 +188,9 @@ body {
 }
 
 @import "media_queries/xxsmall";
+@import "media_queries/xsmall";
 @import "media_queries/small";
+@import "media_queries/medium";
 @import "media_queries/large";
 @import "media_queries/xlarge";
+@import "media_queries/hidpi";
