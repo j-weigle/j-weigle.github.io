@@ -1,37 +1,37 @@
 <!DOCTYPE HTML>
 
 <html>
-	<head>
-		<title>Justin Weigle Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="css/main.css" />
-		<!--noscript><link rel="stylesheet" href="css/noscript.css" /></noscript>-->
-	</head>
+  <head>
+    <title>Justin Weigle Portfolio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="css/main.css" />
+    <!--noscript><link rel="stylesheet" href="css/noscript.css" /></noscript>-->
+  </head>
 
-	<body>
-		<div class="wrapper">
-			<!-- Sidebar / Header -->
-			<section id="navigation">
-				<div class="inner">
-					<nav>
-						<ul>
-							<li>
+  <body>
+    <div class="wrapper">
+      <!-- Sidebar / Header -->
+      <section id="navigation">
+        <div class="inner">
+          <nav>
+            <ul>
+              <li>
                 <a href="#hero" onclick="event.preventDefault(); setActiveNav(this); smoothScrollTo('hero');">Intro</a>
               </li>
-							<li>
+              <li>
                 <a href="#projects" onclick="event.preventDefault(); setActiveNav(this); smoothScrollTo('projects');">Projects</a>
               </li>
-							<li>
+              <li>
                 <a href="#contact" onclick="event.preventDefault(); setActiveNav(this); smoothScrollTo('contact');">Contact</a>
               </li>
-						</ul>
-					</nav>
-				</div>
-			</section>
+            </ul>
+          </nav>
+        </div>
+      </section>
 
       <!-- Content -->
-			<div class="content-wrapper">
+      <div class="content-wrapper">
 
         <div id="hero" class="content-section">
           <div class="inner">
@@ -41,7 +41,7 @@
           </div>
         </div>
 
-				<div id="projects" class="content-section">
+        <div id="projects" class="content-section">
           <div class="project-image">
             <img src="img/fibonacci-sphere.png"/>
           </div>
@@ -66,9 +66,9 @@
             <p>An Android application written in Java that outputs pdf documents of forklift preventative maintenance checklists</p>
             <a href="./pages/pm-checklist" class="button">SEE MORE</a>
           </div>
-				</div>
+        </div>
 
-				<div id="contact" class="content-section">
+        <div id="contact" class="content-section">
           <div class="inner">
             <h3>Contact Me:</h3>
             <div class="entry">
@@ -78,12 +78,12 @@
               <img src="img/github.ico" alt="github icon"><a href="https://github.com/j-weigle">github.com/j-weigle</a>
             </div>
           </div>
-				</div>
+        </div>
 
-			</div>
-		</div>
+      </div>
+    </div>
 
-		<script src="js/main.js"></script>
+    <script src="js/main.js"></script>
     <script language="JavaScript">
       const elem = document.querySelector('#myem');
       const user = 'justin.weigle2';
@@ -91,5 +91,5 @@
       elem.setAttribute('href', '\mailto:' + user + '@' + site);
       elem.innerText  = user + '@' + site;
     </script>
-	</body>
+  </body>
 </html>
